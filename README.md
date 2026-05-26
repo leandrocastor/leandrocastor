@@ -26,7 +26,7 @@
 - 🎯 Especialista em **Cloud Pre-Sales** com foco em Azure, Microsoft 365 e AWS
 - 🎓 **Microsoft Certified Trainer (MCT)** — ministro treinamentos oficiais Microsoft de Azure
 - 🔐 Expertise em **Infraestrutura, Segurança e Governança** em nuvem
-- ⚙️ Apaixonado por **automação com PowerShell** e boas práticas DevOps
+- 🌱 Em aprendizado em **DevOps**, CI/CD e automação com PowerShell
 - ☁️ Experiência em **Cloud Adoption Framework**, arquitetura e conformidade
 - 📚 Sempre estudando e me certificando em novas tecnologias
 
