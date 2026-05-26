@@ -10,6 +10,9 @@
   <a href="https://linkedin.com/in/leandrocastor/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-leandrocastor-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
+  <a href="https://castortech.com.br" target="_blank">
+    <img src="https://img.shields.io/badge/Site-castortech.com.br-0078D4?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+  </a>
   <a href="https://github.com/leandrocastor" target="_blank">
     <img src="https://img.shields.io/github/followers/leandrocastor?label=Followers&style=for-the-badge&logo=github"/>
   </a>
@@ -21,10 +24,10 @@
 ## 🚀 Sobre mim
 
 - 🎯 Especialista em **Cloud Pre-Sales** com foco em Azure, Microsoft 365 e AWS
-- 🎓 **Microsoft Certified Trainer (MCT)** — capacitando times em tecnologias Microsoft
+- 🎓 **Microsoft Certified Trainer (MCT)** — ministro treinamentos oficiais Microsoft de Azure
 - 🔐 Expertise em **Infraestrutura, Segurança e Governança** em nuvem
-- ⚙️ Apaixonado por **automação com PowerShell** e boas práticas DevOps
 - ☁️ Experiência em **Cloud Adoption Framework**, arquitetura e conformidade
+- 🌱 Estudando **DevOps**, automação e práticas de CI/CD
 - 📚 Sempre estudando e me certificando em novas tecnologias
 
 ---
