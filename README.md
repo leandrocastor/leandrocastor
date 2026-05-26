@@ -1,9 +1,10 @@
 <h1 align="center">Olá, eu sou o Leandro Castor 👋</h1>
 
 <p align="center">
-  <b>Cloud Specialist Pre-Sales · Microsoft Certified Trainer (MCT)</b><br/>
-  Instrutor Oficial Microsoft Azure · Infrastructure & Security Specialist<br/>
-  Azure · Microsoft 365 · AWS | Automação · Governança · Cloud Adoption
+  <b>Cloud & Security Specialist | Microsoft Certified Trainer (MCT)</b><br/>
+  Specialist in Microsoft Azure, Microsoft 365, Identity, Security & Infrastructure<br/>
+  Azure • Entra ID • Intune • Defender XDR • Azure DevOps • Automation • Governance • AWS<br/>
+  Cloud Architecture • Hybrid Identity • Modern Workplace • Cloud Adoption • Security Operations
 </p>
 
 <p align="center">
