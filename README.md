@@ -2,8 +2,8 @@
 
 <p align="center">
   <b>Cloud Specialist Pre-Sales · Microsoft Certified Trainer (MCT)</b><br/>
-  Infrastructure & Security Specialist in Azure, Microsoft 365 & AWS<br/>
-  Automação · Governança · Cloud Adoption
+  Instrutor Oficial Microsoft Azure · Infrastructure & Security Specialist<br/>
+  Azure · Microsoft 365 · AWS | Automação · Governança · Cloud Adoption
 </p>
 
 <p align="center">
