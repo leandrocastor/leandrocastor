@@ -79,20 +79,13 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="165em" src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api?username=leandrocastor&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
-  <img height="165em" src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api/top-langs/?username=leandrocastor&layout=compact&langs_count=6&theme=tokyonight&hide_border=true"/>
-</p>
-
-<p align="center">
   <img src="https://streak-stats.demolab.com/?user=leandrocastor&theme=tokyonight&hide_border=true&locale=pt_BR" alt="GitHub Streak"/>
 </p>
 
----
-
-## 🏆 Troféus
-
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=leandrocastor&theme=tokyonight&no-frame=true&row=1&column=6&margin-w=15" alt="GitHub Trophies"/>
+  <img src="https://img.shields.io/badge/Repositórios%20Públicos-7-0078D4?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/github/followers/leandrocastor?label=Seguidores&style=for-the-badge&logo=github&logoColor=white&color=0078D4"/>
+  <img src="https://img.shields.io/badge/Desde-2018-0078D4?style=for-the-badge&logo=github&logoColor=white"/>
 </p>
 
 ---
