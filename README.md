@@ -79,8 +79,8 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=leandrocastor&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=leandrocastor&layout=compact&langs_count=6&theme=tokyonight&hide_border=true"/>
+  <img height="165em" src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api?username=leandrocastor&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
+  <img height="165em" src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api/top-langs/?username=leandrocastor&layout=compact&langs_count=6&theme=tokyonight&hide_border=true"/>
 </p>
 
 <p align="center">
@@ -92,7 +92,7 @@
 ## 🏆 Troféus
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=leandrocastor&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=leandrocastor&theme=tokyonight&no-frame=true&row=1&column=6&margin-w=15" alt="GitHub Trophies"/>
 </p>
 
 ---
