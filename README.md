@@ -21,10 +21,22 @@
   <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
     <img src="https://img.shields.io/badge/Credly-Certificações-FF6B00?style=for-the-badge&logo=credly&logoColor=white"/>
   </a>
+  <a href="https://learn.microsoft.com/pt-br/users/leandrocastor-0289/" target="_blank">
+    <img src="https://img.shields.io/badge/Microsoft%20Learn-Perfil-0078D4?style=for-the-badge&logo=microsoft&logoColor=white"/>
+  </a>
+  <a href="https://www.youtube.com/@leandrocastor" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube-%40leandrocastor-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
+  </a>
   <a href="https://github.com/leandrocastor" target="_blank">
     <img src="https://img.shields.io/github/followers/leandrocastor?label=Followers&style=for-the-badge&logo=github"/>
   </a>
   <img src="https://komarev.com/ghpvc/?username=leandrocastor&color=0078D4&style=for-the-badge&label=Visitas"/>
+</p>
+
+<br/>
+
+<p align="center">
+  <i>💡 "Entre subir recursos e construir soluções existe arquitetura."</i>
 </p>
 
 ---
@@ -37,6 +49,19 @@
 - ☁️ Atuação com **Cloud Adoption Framework**, arquitetura, conformidade e modernização de ambientes
 - 🌱 Evoluindo em **DevOps, CI/CD, automação e Infrastructure as Code** com PowerShell, Bicep e Azure DevOps
 - 📚 Foco contínuo em certificações Microsoft, segurança, automação e tecnologias cloud
+
+---
+
+## 🎓 Treinamentos Oficiais Microsoft
+
+> Como **Microsoft Certified Trainer (MCT)**, ministro os seguintes cursos oficiais:
+
+| Curso | Título | Nível |
+|:---:|---|:---:|
+| **AZ-900** | Microsoft Azure Fundamentals | Fundamentals |
+| **AZ-104** | Microsoft Azure Administrator | Associate |
+| **AZ-305** | Designing Microsoft Azure Infrastructure Solutions | Expert |
+| **AZ-500** | Microsoft Azure Security Technologies | Associate |
 
 ---
 
@@ -149,6 +174,12 @@
   </a>
   <a href="https://castortech.com.br">
     <img src="https://img.shields.io/badge/-castortech.com.br-0078D4?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+  </a>
+  <a href="https://www.youtube.com/@leandrocastor">
+    <img src="https://img.shields.io/badge/-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
+  </a>
+  <a href="https://learn.microsoft.com/pt-br/users/leandrocastor-0289/">
+    <img src="https://img.shields.io/badge/-Microsoft%20Learn-0078D4?style=for-the-badge&logo=microsoft&logoColor=white"/>
   </a>
   <a href="https://www.credly.com/users/leandro-irineu-castor/">
     <img src="https://img.shields.io/badge/-Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white"/>
