@@ -53,7 +53,7 @@
 
 <p align="center">
   <img src="assets/mvp-badge.png" height="92" title="Microsoft MVP"/>
-  <img src="assets/mct-badge.png" height="92" title="Microsoft Certified Trainer"/>
+  <img src="assets/mct-badge.png" height="112" title="Microsoft Certified Trainer"/>
 </p>
 
 <p align="center">
@@ -93,7 +93,7 @@
 <p align="center">
   <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
     <img src="assets/mvp-badge.png" height="88" title="Microsoft MVP"/>
-    <img src="assets/mct-badge.png" height="88" title="Microsoft Certified Trainer"/>
+    <img src="assets/mct-badge.png" height="108" title="Microsoft Certified Trainer"/>
     <img src="https://images.credly.com/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" height="88" title="Azure Solutions Architect Expert"/>
     <img src="https://images.credly.com/images/0ba22331-acf9-4e8a-8ce3-b4cc3d376040/image.png" height="88" title="Cybersecurity Architect Expert"/>
     <img src="https://images.credly.com/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png" height="88" title="Azure Administrator Associate"/>
