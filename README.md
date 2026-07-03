@@ -51,10 +51,16 @@
 
 ## ✨ Destaques atuais
 
-<p align="center">
-  <img src="assets/mvp-badge.png" height="92" title="Microsoft MVP"/>
-  <img src="assets/mct-badge.png" height="112" title="Microsoft Certified Trainer"/>
-</p>
+<table align="center">
+  <tr>
+    <td valign="middle">
+      <img src="assets/mvp-badge.png" height="92" title="Microsoft MVP"/>
+    </td>
+    <td valign="middle">
+      <img src="assets/mct-badge.png" height="112" title="Microsoft Certified Trainer"/>
+    </td>
+  </tr>
+</table>
 
 <p align="center">
   <b>Áreas de atuação:</b> Azure • Microsoft 365 • Identity • Security • Governance • Automation
@@ -90,18 +96,50 @@
 ## 🏅 Certificações em destaque
 
 ### Microsoft
-<p align="center">
-  <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
-    <img src="assets/mvp-badge.png" height="88" title="Microsoft MVP"/>
-    <img src="assets/mct-badge.png" height="108" title="Microsoft Certified Trainer"/>
-    <img src="https://images.credly.com/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" height="88" title="Azure Solutions Architect Expert"/>
-    <img src="https://images.credly.com/images/0ba22331-acf9-4e8a-8ce3-b4cc3d376040/image.png" height="88" title="Cybersecurity Architect Expert"/>
-    <img src="https://images.credly.com/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png" height="88" title="Azure Administrator Associate"/>
-    <img src="https://images.credly.com/images/ea009208-e2d6-432e-bbf6-d34d28b0835f/azure-virtual-desktop-specialty-600x600.png" height="88" title="Azure Virtual Desktop Specialty"/>
-    <img src="https://images.credly.com/images/91295436-0704-4b98-8e1a-ef5f937bda21/identity-and-access-administrator-associate-600x600.png" height="88" title="Identity & Access Administrator"/>
-    <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" height="88" title="Azure Fundamentals"/>
-  </a>
-</p>
+<table align="center">
+  <tr>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="assets/mvp-badge.png" height="88" title="Microsoft MVP"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="assets/mct-badge.png" height="108" title="Microsoft Certified Trainer"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="https://images.credly.com/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" height="88" title="Azure Solutions Architect Expert"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="https://images.credly.com/images/0ba22331-acf9-4e8a-8ce3-b4cc3d376040/image.png" height="88" title="Cybersecurity Architect Expert"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="https://images.credly.com/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png" height="88" title="Azure Administrator Associate"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="https://images.credly.com/images/ea009208-e2d6-432e-bbf6-d34d28b0835f/azure-virtual-desktop-specialty-600x600.png" height="88" title="Azure Virtual Desktop Specialty"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="https://images.credly.com/images/91295436-0704-4b98-8e1a-ef5f937bda21/identity-and-access-administrator-associate-600x600.png" height="88" title="Identity & Access Administrator"/>
+      </a>
+    </td>
+    <td valign="middle">
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank">
+        <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" height="88" title="Azure Fundamentals"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ### AWS
 <p align="center">
