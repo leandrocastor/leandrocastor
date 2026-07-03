@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b>Cloud & Security Specialist | Microsoft Certified Trainer (MCT)</b><br/>
+  <b>Microsoft MVP | Cloud & Security Specialist | Microsoft Certified Trainer (MCT)</b><br/>
   Specialist in Microsoft Azure, Microsoft 365, Identity, Security & Infrastructure<br/>
   Azure • Entra ID • Intune • Defender XDR • Azure DevOps • Automation • Governance • AWS<br/>
   Cloud Architecture • Hybrid Identity • Modern Workplace • Cloud Adoption • Security Operations
