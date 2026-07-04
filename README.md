@@ -184,13 +184,22 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=leandrocastor&show_icons=true&theme=transparent&hide_border=true&locale=pt-br&rank_icon=github" alt="GitHub stats"/>
+  <img height="165" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=leandrocastor&theme=github_dark" alt="GitHub stats"/>
   <img height="165" src="https://streak-stats.demolab.com?user=leandrocastor&theme=transparent&hide_border=true&locale=pt_BR" alt="GitHub streak"/>
+</p>
+
+<p align="center">
+  <img height="165" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=leandrocastor&theme=github_dark" alt="Repos por linguagem"/>
+  <img height="165" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=leandrocastor&theme=github_dark&utcOffset=-3" alt="Horário produtivo"/>
 </p>
 
 ---
 
 ## 🐍 Contribuições
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=leandrocastor&theme=github-dark&hide_border=true" alt="Gráfico de atividade no GitHub"/>
+</p>
 
 <p align="center">
   <picture>
