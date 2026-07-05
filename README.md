@@ -72,11 +72,11 @@
 
 | Projeto | Descrição |
 |---|---|
+| [castortech-site](https://github.com/leandrocastor/castortech-site) | Site oficial CastorTech: React + Vite + Azure Static Web Apps, CMS próprio para artigos HTML/Markdown, analytics com Application Insights e Clarity. |
 | [devops101](https://github.com/leandrocastor/devops101) | Repositório voltado a estudos e práticas de DevOps. |
 | [scaleazuresqldatabase](https://github.com/leandrocastor/scaleazuresqldatabase) | Automação para escala de Azure SQL Database. |
 | [mslearn-deploy-run-container-app-service](https://github.com/leandrocastor/mslearn-deploy-run-container-app-service) | Exemplo prático do Microsoft Learn para deploy de aplicação em container no App Service. |
 | [glpi-singlesignon](https://github.com/leandrocastor/glpi-singlesignon) | Integração de autenticação do GLPI com Microsoft 365 / Office 365. |
-| [AZ-104-MicrosoftAzureAdministrator-master](https://github.com/leandrocastor/AZ-104-MicrosoftAzureAdministrator-master) | Material de apoio e laboratório para Azure Administrator. |
 
 ---
 
