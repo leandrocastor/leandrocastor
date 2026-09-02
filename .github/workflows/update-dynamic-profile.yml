@@ -1,0 +1,101 @@
+name: Update Dynamic Profile Sections
+
+on:
+  schedule:
+    - cron: "30 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    env:
+      FEED_URL: https://castortech.com.br/rss.xml
+      README_PATH: README.md
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update latest posts from RSS
+        shell: python
+        run: |
+          import html
+          import os
+          import re
+          import sys
+          import urllib.request
+          from urllib.parse import urlparse
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          readme_path = Path(os.environ["README_PATH"])
+          feed_url = os.environ["FEED_URL"]
+          start = "<!-- BLOG-POST-LIST:START -->"
+          end = "<!-- BLOG-POST-LIST:END -->"
+
+          def safe_title(value):
+              return " ".join(value.strip().split()) or "Post técnico"
+
+          def safe_link(value):
+              candidate = value.strip()
+              if any(character.isspace() or ord(character) < 32 for character in candidate):
+                  return "https://castortech.com.br"
+              parsed = urlparse(candidate)
+              if parsed.scheme in {"http", "https"} and parsed.netloc:
+                  return candidate
+              return "https://castortech.com.br"
+
+          try:
+              with urllib.request.urlopen(feed_url, timeout=20) as response:
+                  feed_xml = response.read()
+              root = ET.fromstring(feed_xml)
+          except Exception as exc:
+              print(f"RSS unavailable or invalid ({exc}); keeping README unchanged.")
+              sys.exit(0)
+
+          channel_items = root.findall("./channel/item")
+          atom_ns = {"atom": "http://www.w3.org/2005/Atom"}
+          atom_items = root.findall("atom:entry", atom_ns)
+
+          posts = []
+          for item in channel_items[:5]:
+              title = safe_title(item.findtext("title") or "Post técnico")
+              link = safe_link(item.findtext("link") or "https://castortech.com.br")
+              posts.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a>')
+
+          for entry in atom_items[:5]:
+              title = safe_title(entry.findtext("atom:title", default="Post técnico", namespaces=atom_ns) or "Post técnico")
+              link_element = entry.find("atom:link", atom_ns)
+              link = safe_link(link_element.attrib.get("href", "https://castortech.com.br") if link_element is not None else "https://castortech.com.br")
+              posts.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a>')
+
+          if not posts:
+              print("No posts found; keeping README unchanged.")
+              sys.exit(0)
+
+          readme = readme_path.read_text(encoding="utf-8")
+          updated_block = f"{start}\n" + "\n".join(posts[:5]) + f"\n{end}"
+          updated = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
+
+          if updated == readme:
+              print("README already up to date.")
+              sys.exit(0)
+
+          readme_path.write_text(updated, encoding="utf-8")
+          print("README latest posts section updated.")
+
+      - name: Commit README changes
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "No README changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: update latest profile posts"
+          git push
