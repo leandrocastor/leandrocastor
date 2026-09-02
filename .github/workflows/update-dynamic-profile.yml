@@ -35,10 +35,16 @@ jobs:
           start = "<!-- BLOG-POST-LIST:START -->"
           end = "<!-- BLOG-POST-LIST:END -->"
 
+          def safe_title(value):
+              return " ".join(value.strip().split()) or "Post técnico"
+
           def safe_link(value):
-              parsed = urlparse(value.strip())
+              candidate = value.strip()
+              if any(character.isspace() or ord(character) < 32 for character in candidate):
+                  return "https://castortech.com.br"
+              parsed = urlparse(candidate)
               if parsed.scheme in {"http", "https"} and parsed.netloc:
-                  return value.strip()
+                  return candidate
               return "https://castortech.com.br"
 
           try:
@@ -55,15 +61,15 @@ jobs:
 
           posts = []
           for item in channel_items[:5]:
-              title = (item.findtext("title") or "Post técnico").strip()
+              title = safe_title(item.findtext("title") or "Post técnico")
               link = safe_link(item.findtext("link") or "https://castortech.com.br")
-              posts.append(f"- [{html.escape(title)}]({link})")
+              posts.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a>')
 
           for entry in atom_items[:5]:
-              title = (entry.findtext("atom:title", default="Post técnico", namespaces=atom_ns) or "Post técnico").strip()
+              title = safe_title(entry.findtext("atom:title", default="Post técnico", namespaces=atom_ns) or "Post técnico")
               link_element = entry.find("atom:link", atom_ns)
               link = safe_link(link_element.attrib.get("href", "https://castortech.com.br") if link_element is not None else "https://castortech.com.br")
-              posts.append(f"- [{html.escape(title)}]({link})")
+              posts.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a>')
 
           if not posts:
               print("No posts found; keeping README unchanged.")
