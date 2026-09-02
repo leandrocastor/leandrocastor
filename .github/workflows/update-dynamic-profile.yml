@@ -77,7 +77,7 @@ jobs:
 
           readme = readme_path.read_text(encoding="utf-8")
           updated_block = f"{start}\n" + "\n".join(posts[:5]) + f"\n{end}"
-          updated = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", updated_block, readme, flags=re.S)
+          updated = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
 
           if updated == readme:
               print("README already up to date.")
