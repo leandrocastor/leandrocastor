@@ -2,38 +2,39 @@ name: Update Dynamic Profile Sections
 
 on:
   schedule:
-    - cron: "30 9 * * 1"
+    - cron: "30 9 * * 1,4"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+env:
+  README_PATH: README.md
+  GITHUB_USERNAME: leandrocastor
+
 jobs:
-  update-readme:
+  # Cada job abaixo é independente: se uma fonte externa falhar, apenas o
+  # artefato correspondente deixa de ser gerado e o README permanece
+  # inalterado naquela seção. O job "aggregate-and-commit" aplica todas as
+  # atualizações disponíveis em um único commit.
+
+  update-blog-posts:
     runs-on: ubuntu-latest
+    continue-on-error: true
     env:
       FEED_URL: https://castortech.com.br/rss.xml
-      README_PATH: README.md
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Update latest posts from RSS
+      - name: Fetch latest blog posts (RSS)
         shell: python
         run: |
           import html
           import os
-          import re
           import sys
           import urllib.request
           from urllib.parse import urlparse
           import xml.etree.ElementTree as ET
-          from pathlib import Path
 
-          readme_path = Path(os.environ["README_PATH"])
           feed_url = os.environ["FEED_URL"]
-          start = "<!-- BLOG-POST-LIST:START -->"
-          end = "<!-- BLOG-POST-LIST:END -->"
 
           def safe_title(value):
               return " ".join(value.strip().split()) or "Post técnico"
@@ -52,7 +53,7 @@ jobs:
                   feed_xml = response.read()
               root = ET.fromstring(feed_xml)
           except Exception as exc:
-              print(f"RSS unavailable or invalid ({exc}); keeping README unchanged.")
+              print(f"RSS unavailable or invalid ({exc}).")
               sys.exit(0)
 
           channel_items = root.findall("./channel/item")
@@ -72,19 +73,324 @@ jobs:
               posts.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a>')
 
           if not posts:
-              print("No posts found; keeping README unchanged.")
+              print("No posts found.")
               sys.exit(0)
 
+          with open("blog-posts.md", "w", encoding="utf-8") as handle:
+              handle.write("\n".join(posts[:5]) + "\n")
+          print("blog-posts.md generated.")
+
+      - name: Upload artifact
+        if: hashFiles('blog-posts.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-posts
+          path: blog-posts.md
+          retention-days: 1
+
+  update-youtube:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      YOUTUBE_HANDLE: "@leandrocastor"
+    steps:
+      - name: Fetch latest YouTube videos
+        shell: python
+        run: |
+          import html
+          import os
+          import re
+          import sys
+          import urllib.request
+          from datetime import datetime, timezone
+          import xml.etree.ElementTree as ET
+
+          handle = os.environ["YOUTUBE_HANDLE"]
+
+          def relative_days(published):
+              try:
+                  published_dt = datetime.strptime(published, "%Y-%m-%dT%H:%M:%S%z")
+              except ValueError:
+                  return ""
+              delta = datetime.now(timezone.utc) - published_dt.astimezone(timezone.utc)
+              days = max(delta.days, 0)
+              if days == 0:
+                  return "hoje"
+              if days == 1:
+                  return "há 1 dia"
+              return f"há {days} dias"
+
+          try:
+              request = urllib.request.Request(
+                  f"https://www.youtube.com/{handle}/videos",
+                  headers={"User-Agent": "Mozilla/5.0"},
+              )
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  channel_html = response.read().decode("utf-8", errors="ignore")
+              match = re.search(r'"channelId":"(UC[0-9A-Za-z_-]{22})"', channel_html)
+              if not match:
+                  print("Could not resolve channelId from channel page.")
+                  sys.exit(0)
+              channel_id = match.group(1)
+
+              feed_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
+              with urllib.request.urlopen(feed_url, timeout=20) as response:
+                  feed_xml = response.read()
+              root = ET.fromstring(feed_xml)
+          except Exception as exc:
+              print(f"YouTube feed unavailable or invalid ({exc}).")
+              sys.exit(0)
+
+          ns = {
+              "atom": "http://www.w3.org/2005/Atom",
+              "yt": "http://www.youtube.com/xml/schemas/2015",
+          }
+
+          videos = []
+          for entry in root.findall("atom:entry", ns)[:5]:
+              title = " ".join((entry.findtext("atom:title", default="", namespaces=ns) or "").strip().split())
+              link_element = entry.find("atom:link", ns)
+              link = link_element.attrib.get("href", "") if link_element is not None else ""
+              published = entry.findtext("atom:published", default="", namespaces=ns) or ""
+              if not title or not link:
+                  continue
+              suffix = relative_days(published)
+              suffix_text = f" — {suffix}" if suffix else ""
+              videos.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a>{suffix_text}')
+
+          if not videos:
+              print("No videos found.")
+              sys.exit(0)
+
+          with open("youtube.md", "w", encoding="utf-8") as out_handle:
+              out_handle.write("\n".join(videos[:5]) + "\n")
+          print("youtube.md generated.")
+
+      - name: Upload artifact
+        if: hashFiles('youtube.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: youtube
+          path: youtube.md
+          retention-days: 1
+
+  update-articles:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      DEVTO_USERNAME: leandrocastor
+      HASHNODE_RSS_URL: https://leandrocastor.hashnode.dev/rss.xml
+    steps:
+      - name: Fetch latest technical articles (Dev.to / Hashnode)
+        shell: python
+        run: |
+          import html
+          import json
+          import os
+          import sys
+          import urllib.request
+          from urllib.parse import urlparse
+          import xml.etree.ElementTree as ET
+
+          devto_username = os.environ["DEVTO_USERNAME"]
+          hashnode_rss_url = os.environ["HASHNODE_RSS_URL"]
+
+          def safe_link(value, fallback):
+              candidate = (value or "").strip()
+              if any(character.isspace() or ord(character) < 32 for character in candidate):
+                  return fallback
+              parsed = urlparse(candidate)
+              if parsed.scheme in {"http", "https"} and parsed.netloc:
+                  return candidate
+              return fallback
+
+          articles = []
+
+          try:
+              devto_url = f"https://dev.to/api/articles?username={devto_username}&per_page=5"
+              request = urllib.request.Request(devto_url, headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  payload = json.loads(response.read().decode("utf-8"))
+              for item in payload[:5]:
+                  title = " ".join((item.get("title") or "Artigo técnico").strip().split())
+                  link = safe_link(item.get("url"), "https://dev.to")
+                  articles.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a> (Dev.to)')
+          except Exception as exc:
+              print(f"Dev.to feed unavailable or invalid ({exc}).")
+
+          try:
+              request = urllib.request.Request(hashnode_rss_url, headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  feed_xml = response.read()
+              root = ET.fromstring(feed_xml)
+              for item in root.findall("./channel/item")[:5]:
+                  title = " ".join((item.findtext("title") or "Artigo técnico").strip().split())
+                  link = safe_link(item.findtext("link"), "https://hashnode.com")
+                  articles.append(f'- <a href="{html.escape(link, quote=True)}">{html.escape(title)}</a> (Hashnode)')
+          except Exception as exc:
+              print(f"Hashnode feed unavailable or invalid ({exc}).")
+
+          if not articles:
+              print("No articles found.")
+              sys.exit(0)
+
+          with open("articles.md", "w", encoding="utf-8") as handle:
+              handle.write("\n".join(articles[:5]) + "\n")
+          print("articles.md generated.")
+
+      - name: Upload artifact
+        if: hashFiles('articles.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: articles
+          path: articles.md
+          retention-days: 1
+
+  update-metrics:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Compute status & real-time metrics (GitHub API)
+        shell: python
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          import json
+          import os
+          import sys
+          import urllib.request
+          from datetime import datetime, timedelta, timezone
+
+          username = os.environ["GITHUB_USERNAME"]
+          token = os.environ.get("GH_TOKEN")
+
+          def api_get(url):
+              request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/vnd.github+json"})
+              if token:
+                  request.add_header("Authorization", "token " + token)
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  return json.loads(response.read().decode("utf-8"))
+
+          try:
+              events = []
+              for page in range(1, 4):
+                  page_events = api_get(f"https://api.github.com/users/{username}/events/public?per_page=100&page={page}")
+                  if not page_events:
+                      break
+                  events.extend(page_events)
+          except Exception as exc:
+              print(f"GitHub events API unavailable ({exc}).")
+              sys.exit(0)
+
+          push_events = [event for event in events if event.get("type") == "PushEvent"]
+
+          def parse_date(value):
+              return datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+
+          now = datetime.now(timezone.utc)
+
+          if push_events:
+              last_commit_dt = max(parse_date(event["created_at"]) for event in push_events)
+              last_commit = last_commit_dt.strftime("%d/%m/%Y")
+          else:
+              last_commit = "sem dados recentes"
+
+          month_start = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+          contributions_month = sum(
+              len(event.get("payload", {}).get("commits", []))
+              for event in push_events
+              if parse_date(event["created_at"]) >= month_start
+          )
+
+          active_days = {parse_date(event["created_at"]).date() for event in events}
+          streak = 0
+          cursor = now.date()
+          while cursor in active_days:
+              streak += 1
+              cursor -= timedelta(days=1)
+
+          thirty_days_ago = now - timedelta(days=30)
+          active_repos = {
+              event["repo"]["name"]
+              for event in events
+              if parse_date(event["created_at"]) >= thirty_days_ago and event.get("repo")
+          }
+
+          rows = [
+              f"| Last commit | {last_commit} | — |",
+              f"| Contribuições (mês atual) | {contributions_month} | — |",
+              f"| Streak atual | {streak} dia(s) | — |",
+              f"| Repositórios ativos | {len(active_repos)} | — |",
+          ]
+
+          with open("metrics.md", "w", encoding="utf-8") as handle:
+              handle.write("\n".join(rows) + "\n")
+          print("metrics.md generated.")
+
+      - name: Upload artifact
+        if: hashFiles('metrics.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics
+          path: metrics.md
+          retention-days: 1
+
+  aggregate-and-commit:
+    needs: [update-blog-posts, update-youtube, update-articles, update-metrics]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download available artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+        continue-on-error: true
+
+      - name: Apply updates to README
+        shell: python
+        run: |
+          import re
+          from pathlib import Path
+
+          readme_path = Path("README.md")
           readme = readme_path.read_text(encoding="utf-8")
-          updated_block = f"{start}\n" + "\n".join(posts[:5]) + f"\n{end}"
-          updated = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
 
-          if updated == readme:
-              print("README already up to date.")
-              sys.exit(0)
+          sections = {
+              "artifacts/blog-posts.md": ("BLOG-POST-LIST:START", "BLOG-POST-LIST:END"),
+              "artifacts/youtube.md": ("YOUTUBE-LIST:START", "YOUTUBE-LIST:END"),
+              "artifacts/articles.md": ("ARTICLES-LIST:START", "ARTICLES-LIST:END"),
+          }
 
-          readme_path.write_text(updated, encoding="utf-8")
-          print("README latest posts section updated.")
+          for artifact_path, (start_marker, end_marker) in sections.items():
+              artifact_file = Path(artifact_path)
+              if not artifact_file.exists():
+                  print(f"{artifact_path} not available; keeping section unchanged.")
+                  continue
+              content = artifact_file.read_text(encoding="utf-8").strip()
+              if not content:
+                  continue
+              start = f"<!-- {start_marker} -->"
+              end = f"<!-- {end_marker} -->"
+              updated_block = f"{start}\n{content}\n{end}"
+              readme = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
+
+          metrics_file = Path("artifacts/metrics.md")
+          if metrics_file.exists():
+              rows = metrics_file.read_text(encoding="utf-8").strip()
+              if rows:
+                  start = "<!-- STATUS-METRICS:START -->"
+                  end = "<!-- STATUS-METRICS:END -->"
+                  header = "| Métrica | Valor | Tendência |\n|---|:---:|:---:|"
+                  updated_block = f"{start}\n{header}\n{rows}\n{end}"
+                  readme = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
+          else:
+              print("artifacts/metrics.md not available; keeping section unchanged.")
+
+          readme_path.write_text(readme, encoding="utf-8")
 
       - name: Commit README changes
         shell: bash
@@ -97,5 +403,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "docs: update latest profile posts"
+          git commit -m "docs: update dynamic profile sections"
           git push

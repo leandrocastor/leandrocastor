@@ -140,6 +140,21 @@
 
 ---
 
+## 🎓 Roadmap de Aprendizado 2024-2025
+
+<!-- Seção estática, atualizada manualmente. Ajuste o status conforme o progresso real dos estudos. -->
+
+| Trimestre | Tema | Status |
+|---|---|:---:|
+| Q4 2024 | Microsoft Fabric Analytics | ✅ Completado |
+| Q1 2025 | Copilot Studio + Agents | 🔄 Em progresso |
+| Q2 2025 | FinOps Framework | 📅 Planejado |
+| Q3 2025 | Quantum Computing Basics | 🎯 Alvo |
+
+> ✅ Completado · 🔄 Em progresso · 📅 Planejado · 🎯 Alvo
+
+---
+
 ## 🧩 Projetos públicos em destaque
 
 | Projeto | Descrição |
@@ -160,6 +175,24 @@
 - [Projetos e automações públicas no GitHub](https://github.com/leandrocastor?tab=repositories) — exemplos práticos em Azure, DevOps e Microsoft 365.
 - [Conteúdos em vídeo no YouTube](https://www.youtube.com/@leandrocastor) — tutoriais, dicas e demonstrações técnicas.
 <!-- BLOG-POST-LIST:END -->
+
+---
+
+## 📹 Últimos Vídeos YouTube
+
+<!-- O workflow .github/workflows/update-dynamic-profile.yml atualiza esta seção automaticamente a partir do canal @leandrocastor. -->
+<!-- YOUTUBE-LIST:START -->
+- [Acompanhe meus vídeos técnicos no canal @leandrocastor](https://www.youtube.com/@leandrocastor) — atualização automática indisponível no momento.
+<!-- YOUTUBE-LIST:END -->
+
+---
+
+## 📖 Artigos Técnicos (Dev.to / Hashnode)
+
+<!-- O workflow .github/workflows/update-dynamic-profile.yml atualiza esta seção automaticamente a partir do Dev.to e Hashnode. -->
+<!-- ARTICLES-LIST:START -->
+- [Artigos e materiais técnicos na CastorTech](https://castortech.com.br) — atualização automática indisponível no momento.
+<!-- ARTICLES-LIST:END -->
 
 ---
 
@@ -264,6 +297,57 @@
 
 ---
 
+## 🏆 Status & Métricas em Tempo Real
+
+<!-- O workflow .github/workflows/update-dynamic-profile.yml atualiza esta tabela automaticamente a partir da API do GitHub. -->
+<!-- STATUS-METRICS:START -->
+| Métrica | Valor | Tendência |
+|---|:---:|:---:|
+| Last commit | _atualização automática pendente_ | — |
+| Contribuições (mês atual) | _atualização automática pendente_ | — |
+| Streak atual | _atualização automática pendente_ | — |
+| Repositórios ativos | _atualização automática pendente_ | — |
+<!-- STATUS-METRICS:END -->
+
+> ℹ️ Certificações e menções são atualizadas manualmente; as demais linhas são recalculadas automaticamente pelo workflow.
+
+---
+
+## 🌍 Mapa de Impacto Global
+
+<!-- Seção estática, atualizada manualmente conforme novos marcos são alcançados. -->
+
+| Indicador | Valor |
+|---|:---:|
+| 🌍 Countries reached | 45+ |
+| 👥 Lives impacted | 1000+ |
+| 📊 Public repos | 18 |
+| 🎓 Students trained | 500+ |
+
+---
+
+## 🤝 Aberto para Colaboração
+
+<p align="center">
+  <b>Disponível para consultoria, treinamentos, palestras e parcerias técnicas.</b>
+</p>
+
+- 💼 **Consultoria** em Azure, Microsoft 365 e Security
+- 🎓 **Treinamentos corporativos** oficiais Microsoft (MCT)
+- 🎤 **Speaking engagements** em eventos e comunidades técnicas
+- 🔗 **Parcerias técnicas** e projetos open source
+
+<p align="center">
+  <a href="https://linkedin.com/in/leandrocastor/" target="_blank" title="Entre em contato via LinkedIn">
+    <img src="https://img.shields.io/badge/Vamos%20conversar-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Fale comigo pelo LinkedIn" title="Contato via LinkedIn"/>
+  </a>
+  <a href="https://castortech.com.br" target="_blank" title="Agende uma conversa pelo site CastorTech">
+    <img src="https://img.shields.io/badge/Agendar-CastorTech-0078D4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Agende uma conversa pelo CastorTech" title="Agendar via CastorTech"/>
+  </a>
+</p>
+
+---
+
 ## 📊 GitHub Stats
 
 <p align="center">
@@ -309,8 +393,14 @@
 ## 🤖 Automações do perfil
 
 - `Generate Snake Animation`: atualiza diariamente a animação de contribuições no branch `output`.
-- `Update Dynamic Profile Sections`: preparado para atualizar a seção de posts técnicos por RSS entre `BLOG-POST-LIST:START` e `BLOG-POST-LIST:END`.
-- Para manter o README atualizado, ajuste as URLs no workflow e publique novos conteúdos no feed configurado.
+- `Update Dynamic Profile Sections`: workflow consolidado com jobs paralelos e independentes, executado diariamente (e sob demanda via `workflow_dispatch`):
+  - **Posts técnicos**: RSS da CastorTech entre `BLOG-POST-LIST:START` e `BLOG-POST-LIST:END`.
+  - **Vídeos YouTube**: canal `@leandrocastor` entre `YOUTUBE-LIST:START` e `YOUTUBE-LIST:END`.
+  - **Artigos Dev.to/Hashnode**: entre `ARTICLES-LIST:START` e `ARTICLES-LIST:END`.
+  - **Status & Métricas**: API pública do GitHub entre `STATUS-METRICS:START` e `STATUS-METRICS:END`.
+  - Cada job trata falhas de forma isolada (`continue-on-error`) e um job final agrega os resultados disponíveis em um único commit, garantindo que o README nunca quebre caso uma fonte externa esteja indisponível.
+- **Atualização manual**: as seções de Roadmap de Aprendizado, Mapa de Impacto Global e Aberto para Colaboração são estáticas e devem ser editadas diretamente no `README.md` conforme novos marcos forem alcançados.
+- Para reconfigurar fontes (feed RSS, usuário Dev.to/Hashnode), ajuste as variáveis de ambiente (`env`) no início de cada job em `.github/workflows/update-dynamic-profile.yml`.
 
 ---
 
