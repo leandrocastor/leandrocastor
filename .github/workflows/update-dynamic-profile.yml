@@ -335,8 +335,68 @@ jobs:
           path: metrics.md
           retention-days: 1
 
+  update-wakatime:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Compute Wakatime stats (últimos 7 dias e mês)
+        shell: python
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: |
+          import base64
+          import json
+          import os
+          import sys
+          import urllib.request
+
+          api_key = os.environ.get("WAKATIME_API_KEY")
+          if not api_key:
+              print("WAKATIME_API_KEY secret not configured; skipping Wakatime update.")
+              sys.exit(0)
+
+          languages = ["PowerShell", "Bicep", "Terraform", "Python", "YAML"]
+          auth_header = "Basic " + base64.b64encode(api_key.encode("utf-8")).decode("utf-8")
+
+          def fetch_stats(range_name):
+              url = f"https://wakatime.com/api/v1/users/current/stats/{range_name}"
+              request = urllib.request.Request(url, headers={"Authorization": auth_header})
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  return json.loads(response.read().decode("utf-8"))
+
+          def language_hours(payload):
+              hours_by_language = {}
+              for entry in payload.get("data", {}).get("languages", []):
+                  hours_by_language[entry.get("name", "")] = entry.get("text", "0 mins")
+              return hours_by_language
+
+          try:
+              weekly = language_hours(fetch_stats("last_7_days"))
+              monthly = language_hours(fetch_stats("last_30_days"))
+          except Exception as exc:
+              print(f"Wakatime API unavailable or invalid ({exc}).")
+              sys.exit(0)
+
+          rows = ["| Linguagem/Tecnologia | Últimos 7 dias | Último mês |", "|---|:---:|:---:|"]
+          for language in languages:
+              week_value = weekly.get(language, "sem dados")
+              month_value = monthly.get(language, "sem dados")
+              rows.append(f"| {language} | {week_value} | {month_value} |")
+
+          with open("wakatime.md", "w", encoding="utf-8") as handle:
+              handle.write("\n".join(rows) + "\n")
+          print("wakatime.md generated.")
+
+      - name: Upload artifact
+        if: hashFiles('wakatime.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: wakatime
+          path: wakatime.md
+          retention-days: 1
+
   aggregate-and-commit:
-    needs: [update-blog-posts, update-youtube, update-articles, update-metrics]
+    needs: [update-blog-posts, update-youtube, update-articles, update-metrics, update-wakatime]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -389,6 +449,17 @@ jobs:
                   readme = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
           else:
               print("artifacts/metrics.md not available; keeping section unchanged.")
+
+          wakatime_file = Path("artifacts/wakatime.md")
+          if wakatime_file.exists():
+              content = wakatime_file.read_text(encoding="utf-8").strip()
+              if content:
+                  start = "<!-- WAKATIME-STATS:START -->"
+                  end = "<!-- WAKATIME-STATS:END -->"
+                  updated_block = f"{start}\n{content}\n{end}"
+                  readme = re.sub(f"{re.escape(start)}.*?{re.escape(end)}", lambda _: updated_block, readme, flags=re.S)
+          else:
+              print("artifacts/wakatime.md not available; keeping section unchanged.")
 
           readme_path.write_text(readme, encoding="utf-8")
 

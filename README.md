@@ -128,6 +128,10 @@
 | DevOps & IaC | ████████░░ 85% | PowerShell, Bicep, Terraform, Azure DevOps e GitHub Actions |
 | Comunidade & Treinamento | █████████░ 95% | MCT, MVP, talks, labs e capacitação prática |
 
+<p align="center">
+  <img src="assets/tech-stack-glass.svg" alt="Card com efeito glassmorphism mostrando proficiência e anos de experiência em Azure, Security, Microsoft 365 e DevOps" title="Tech Stack (glassmorphism)"/>
+</p>
+
 ---
 
 ## 🔬 Testando agora / Em exploração
@@ -313,6 +317,24 @@
 
 ---
 
+## 💻 Wakatime Stats
+
+<!-- O workflow .github/workflows/update-dynamic-profile.yml atualiza esta tabela automaticamente a partir da API do Wakatime. -->
+<!-- Requer o secret WAKATIME_API_KEY configurado em Settings > Secrets and variables > Actions. -->
+<!-- WAKATIME-STATS:START -->
+| Linguagem/Tecnologia | Últimos 7 dias | Último mês |
+|---|:---:|:---:|
+| PowerShell | _atualização automática pendente_ | _atualização automática pendente_ |
+| Bicep | _atualização automática pendente_ | _atualização automática pendente_ |
+| Terraform | _atualização automática pendente_ | _atualização automática pendente_ |
+| Python | _atualização automática pendente_ | _atualização automática pendente_ |
+| YAML | _atualização automática pendente_ | _atualização automática pendente_ |
+<!-- WAKATIME-STATS:END -->
+
+> ℹ️ Se o secret `WAKATIME_API_KEY` não estiver configurado ou a API estiver indisponível, esta seção mantém o último valor conhecido e o workflow segue sem falhar.
+
+---
+
 ## 🌍 Mapa de Impacto Global
 
 <!-- Seção estática, atualizada manualmente conforme novos marcos são alcançados. -->
@@ -329,13 +351,13 @@
 ## 🤝 Aberto para Colaboração
 
 <p align="center">
-  <b>Disponível para consultoria, treinamentos, palestras e parcerias técnicas.</b>
+  <b>Disponível para treinamentos, palestras, workshops e mentorias técnicas.</b>
 </p>
 
-- 💼 **Consultoria** em Azure, Microsoft 365 e Security
 - 🎓 **Treinamentos corporativos** oficiais Microsoft (MCT)
 - 🎤 **Speaking engagements** em eventos e comunidades técnicas
-- 🔗 **Parcerias técnicas** e projetos open source
+- 📚 **Workshops e laboratórios práticos**
+- 💬 **Mentorias técnicas** e comunidade
 
 <p align="center">
   <a href="https://linkedin.com/in/leandrocastor/" target="_blank" title="Entre em contato via LinkedIn">
@@ -398,9 +420,11 @@
   - **Vídeos YouTube**: canal `@leandrocastor` entre `YOUTUBE-LIST:START` e `YOUTUBE-LIST:END`.
   - **Artigos Dev.to/Hashnode**: entre `ARTICLES-LIST:START` e `ARTICLES-LIST:END`.
   - **Status & Métricas**: API pública do GitHub entre `STATUS-METRICS:START` e `STATUS-METRICS:END`.
+  - **Wakatime Stats**: API do Wakatime entre `WAKATIME-STATS:START` e `WAKATIME-STATS:END`. Requer o secret `WAKATIME_API_KEY`; se ausente ou indisponível, o job é ignorado sem quebrar o README.
   - Cada job trata falhas de forma isolada (`continue-on-error`) e um job final agrega os resultados disponíveis em um único commit, garantindo que o README nunca quebre caso uma fonte externa esteja indisponível.
 - **Atualização manual**: as seções de Roadmap de Aprendizado, Mapa de Impacto Global e Aberto para Colaboração são estáticas e devem ser editadas diretamente no `README.md` conforme novos marcos forem alcançados.
 - Para reconfigurar fontes (feed RSS, usuário Dev.to/Hashnode), ajuste as variáveis de ambiente (`env`) no início de cada job em `.github/workflows/update-dynamic-profile.yml`.
+- Para habilitar o Wakatime, gere uma API key em https://wakatime.com/settings/account e cadastre-a como secret `WAKATIME_API_KEY` em *Settings > Secrets and variables > Actions*.
 
 ---
 
