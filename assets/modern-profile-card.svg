@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 920 260">
+  <title id="title">Leandro Castor profile highlights</title>
+  <desc id="desc">Animated Microsoft-style card highlighting Cloud Architecture, Security, Automation and Community.</desc>
+  <defs>
+    <linearGradient id="microsoftGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="35%" stop-color="#00A4EF"/>
+      <stop offset="70%" stop-color="#7FBA00"/>
+      <stop offset="100%" stop-color="#FFB900"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#002050" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      .card {
+        fill: #ffffff;
+      }
+
+      .title {
+        fill: #002050;
+        font: 700 34px 'Segoe UI', Ubuntu, Arial, sans-serif;
+      }
+
+      .subtitle {
+        fill: #243A5E;
+        font: 500 18px 'Segoe UI', Ubuntu, Arial, sans-serif;
+      }
+
+      .pill-text {
+        fill: #ffffff;
+        font: 700 14px 'Segoe UI', Ubuntu, Arial, sans-serif;
+        letter-spacing: 0.5px;
+      }
+
+      .metric-label {
+        fill: #243A5E;
+        font: 600 15px 'Segoe UI', Ubuntu, Arial, sans-serif;
+      }
+
+      .pulse {
+        animation: pulse 2.8s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      .float {
+        animation: float 4.5s ease-in-out infinite;
+      }
+
+      .dash {
+        stroke-dasharray: 14 10;
+        animation: dash 18s linear infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.62; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.04); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+      }
+
+      @keyframes dash {
+        to { stroke-dashoffset: -240; }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .card { fill: #0D1117; }
+        .title { fill: #F0F6FC; }
+        .subtitle, .metric-label { fill: #C9D1D9; }
+      }
+    </style>
+  </defs>
+
+  <rect width="920" height="260" rx="28" fill="url(#microsoftGradient)" opacity="0.18"/>
+  <rect class="card" x="18" y="18" width="884" height="224" rx="24" filter="url(#softShadow)"/>
+  <path class="dash" d="M74 181 C190 82, 323 213, 438 125 S674 52, 822 151" fill="none" stroke="url(#microsoftGradient)" stroke-width="4" opacity="0.5"/>
+
+  <g class="float">
+    <circle cx="98" cy="86" r="30" fill="#0078D4" opacity="0.16"/>
+    <circle class="pulse" cx="98" cy="86" r="12" fill="#0078D4"/>
+  </g>
+  <g class="float" style="animation-delay: .4s">
+    <circle cx="788" cy="76" r="34" fill="#7FBA00" opacity="0.16"/>
+    <circle class="pulse" cx="788" cy="76" r="13" fill="#7FBA00"/>
+  </g>
+  <g class="float" style="animation-delay: .8s">
+    <circle cx="830" cy="178" r="30" fill="#FFB900" opacity="0.18"/>
+    <circle class="pulse" cx="830" cy="178" r="11" fill="#FFB900"/>
+  </g>
+
+  <text class="title" x="70" y="78">Cloud, Security &amp; Microsoft Ecosystem</text>
+  <text class="subtitle" x="70" y="112">Arquitetura com governança, segurança, automação e foco em comunidade.</text>
+
+  <g transform="translate(70 148)">
+    <rect width="154" height="38" rx="19" fill="#0078D4"/>
+    <text class="pill-text" x="28" y="25">Azure MVP</text>
+  </g>
+  <g transform="translate(240 148)">
+    <rect width="126" height="38" rx="19" fill="#00A4EF"/>
+    <text class="pill-text" x="31" y="25">MCT</text>
+  </g>
+  <g transform="translate(382 148)">
+    <rect width="188" height="38" rx="19" fill="#7FBA00"/>
+    <text class="pill-text" x="28" y="25">Security Expert</text>
+  </g>
+  <g transform="translate(586 148)">
+    <rect width="210" height="38" rx="19" fill="#FFB900"/>
+    <text class="pill-text" x="26" y="25">Automation First</text>
+  </g>
+
+  <g transform="translate(70 213)">
+    <text class="metric-label">Zero Trust</text>
+    <rect x="92" y="-13" width="130" height="10" rx="5" fill="#D0E7FF"/>
+    <rect x="92" y="-13" width="120" height="10" rx="5" fill="#0078D4"/>
+  </g>
+  <g transform="translate(295 213)">
+    <text class="metric-label">IaC</text>
+    <rect x="42" y="-13" width="130" height="10" rx="5" fill="#D0E7FF"/>
+    <rect x="42" y="-13" width="108" height="10" rx="5" fill="#00A4EF"/>
+  </g>
+  <g transform="translate(492 213)">
+    <text class="metric-label">Governance</text>
+    <rect x="92" y="-13" width="130" height="10" rx="5" fill="#D0E7FF"/>
+    <rect x="92" y="-13" width="116" height="10" rx="5" fill="#7FBA00"/>
+  </g>
+</svg>
