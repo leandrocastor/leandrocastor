@@ -50,11 +50,11 @@ jobs:
           try:
               with urllib.request.urlopen(feed_url, timeout=20) as response:
                   feed_xml = response.read()
+              root = ET.fromstring(feed_xml)
           except Exception as exc:
-              print(f"RSS unavailable ({exc}); keeping README unchanged.")
+              print(f"RSS unavailable or invalid ({exc}); keeping README unchanged.")
               sys.exit(0)
 
-          root = ET.fromstring(feed_xml)
           channel_items = root.findall("./channel/item")
           atom_ns = {"atom": "http://www.w3.org/2005/Atom"}
           atom_items = root.findall("atom:entry", atom_ns)
