@@ -291,10 +291,10 @@
 <!-- STATUS-METRICS:START -->
 | Métrica | Valor | Tendência |
 |---|:---:|:---:|
-| Last commit | _atualização automática pendente_ | — |
-| Contribuições (mês atual) | _atualização automática pendente_ | — |
-| Streak atual | _atualização automática pendente_ | — |
-| Repositórios ativos | _atualização automática pendente_ | — |
+| Last commit | 01/09/2026 | — |
+| Contribuições (mês atual) | 0 | — |
+| Streak atual | 4 dia(s) | — |
+| Repositórios ativos | 2 | — |
 <!-- STATUS-METRICS:END -->
 
 > ℹ️ Certificações e menções são atualizadas manualmente; as demais linhas são recalculadas automaticamente pelo workflow.
