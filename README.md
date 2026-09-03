@@ -138,24 +138,8 @@
 
 - [x] GitHub Copilot e engenharia de prompts para produtividade técnica
 - [x] Microsoft Defender XDR, Sentinel e estratégias Zero Trust
-- [ ] Microsoft Fabric para cenários de analytics e governança de dados
 - [ ] Copilot Studio e automações com agentes orientados a negócio
 - [ ] FinOps em Azure para otimização contínua de custos e arquitetura
-
----
-
-## 🎓 Roadmap de Aprendizado 2024-2025
-
-<!-- Seção estática, atualizada manualmente. Ajuste o status conforme o progresso real dos estudos. -->
-
-| Trimestre | Tema | Status |
-|---|---|:---:|
-| Q4 2024 | Microsoft Fabric Analytics | ✅ Completado |
-| Q1 2025 | Copilot Studio + Agents | 🔄 Em progresso |
-| Q2 2025 | FinOps Framework | 📅 Planejado |
-| Q3 2025 | Quantum Computing Basics | 🎯 Alvo |
-
-> ✅ Completado · 🔄 Em progresso · 📅 Planejado · 🎯 Alvo
 
 ---
 
@@ -422,7 +406,7 @@
   - **Status & Métricas**: API pública do GitHub entre `STATUS-METRICS:START` e `STATUS-METRICS:END`.
   - **Wakatime Stats**: API do Wakatime entre `WAKATIME-STATS:START` e `WAKATIME-STATS:END`. Requer o secret `WAKATIME_API_KEY`; se ausente ou indisponível, o job é ignorado sem quebrar o README.
   - Cada job trata falhas de forma isolada (`continue-on-error`) e um job final agrega os resultados disponíveis em um único commit, garantindo que o README nunca quebre caso uma fonte externa esteja indisponível.
-- **Atualização manual**: as seções de Roadmap de Aprendizado, Mapa de Impacto Global e Aberto para Colaboração são estáticas e devem ser editadas diretamente no `README.md` conforme novos marcos forem alcançados.
+- **Atualização manual**: as seções de Mapa de Impacto Global e Aberto para Colaboração são estáticas e devem ser editadas diretamente no `README.md` conforme novos marcos forem alcançados.
 - Para reconfigurar fontes (feed RSS, usuário Dev.to/Hashnode), ajuste as variáveis de ambiente (`env`) no início de cada job em `.github/workflows/update-dynamic-profile.yml`.
 - Para habilitar o Wakatime, gere uma API key em https://wakatime.com/settings/account e cadastre-a como secret `WAKATIME_API_KEY` em *Settings > Secrets and variables > Actions*.
 
