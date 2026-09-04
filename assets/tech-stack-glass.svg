@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="glassTitle glassDesc" viewBox="0 0 920 300">
-  <title id="glassTitle">Tech Stack proficiency (glassmorphism)</title>
-  <desc id="glassDesc">Cartão com efeito glassmorphism mostrando proficiência e anos de experiência em Azure, Security, Microsoft 365, DevOps e IaC, e Comunidade.</desc>
+  <title id="glassTitle">Professional focus and studies (glassmorphism)</title>
+  <desc id="glassDesc">Cartão com efeito glassmorphism mostrando áreas profissionais em Azure, Security, Microsoft 365, Infrastructure e estudos em DevOps e IaC.</desc>
   <defs>
     <linearGradient id="glassBackground" x1="0%" x2="100%" y1="0%" y2="100%">
       <stop offset="0%" stop-color="#0078D4"/>
@@ -32,35 +32,35 @@
   <rect width="920" height="300" rx="28" fill="#001433" opacity="0.28" filter="url(#glassBlur)"/>
   <rect x="18" y="18" width="884" height="264" rx="22" class="glass-panel" filter="url(#glassShadow)"/>
 
-  <!-- Azure Architecture: 90% · 8 anos -->
+  <!-- Azure Architecture -->
   <g transform="translate(46, 56)">
     <text class="glass-label" x="0" y="0">Azure Architecture</text>
-    <text class="glass-years" x="0" y="20">90% · 8 anos de experiência</text>
+    <text class="glass-years" x="0" y="20">Atuação profissional</text>
     <rect class="track" x="0" y="30" width="828" height="10" rx="5"/>
     <rect class="bar-fill" x="0" y="30" width="745" height="10" rx="5"/>
   </g>
 
-  <!-- Security & Identity: 95% · 9 anos -->
+  <!-- Security & Identity -->
   <g transform="translate(46, 116)">
     <text class="glass-label" x="0" y="0">Security &amp; Identity</text>
-    <text class="glass-years" x="0" y="20">95% · 9 anos de experiência</text>
+    <text class="glass-years" x="0" y="20">Atuação profissional</text>
     <rect class="track" x="0" y="30" width="828" height="10" rx="5"/>
     <rect class="bar-fill" x="0" y="30" width="787" height="10" rx="5"/>
   </g>
 
-  <!-- Microsoft 365: 85% · 7 anos -->
+  <!-- Microsoft 365 -->
   <g transform="translate(46, 176)">
     <text class="glass-label" x="0" y="0">Microsoft 365</text>
-    <text class="glass-years" x="0" y="20">85% · 7 anos de experiência</text>
+    <text class="glass-years" x="0" y="20">Atuação profissional</text>
     <rect class="track" x="0" y="30" width="828" height="10" rx="5"/>
     <rect class="bar-fill" x="0" y="30" width="704" height="10" rx="5"/>
   </g>
 
-  <!-- DevOps & IaC: 85% · 6 anos -->
+  <!-- DevOps & IaC studies -->
   <g transform="translate(46, 236)">
     <text class="glass-label" x="0" y="0">DevOps &amp; IaC</text>
-    <text class="glass-years" x="0" y="20">85% · 6 anos de experiência</text>
+    <text class="glass-years" x="0" y="20">Estudo e laboratórios</text>
     <rect class="track" x="0" y="30" width="828" height="10" rx="5"/>
-    <rect class="bar-fill" x="0" y="30" width="704" height="10" rx="5"/>
+    <rect class="bar-fill" x="0" y="30" width="414" height="10" rx="5"/>
   </g>
 </svg>
