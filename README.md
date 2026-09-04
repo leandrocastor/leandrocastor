@@ -49,7 +49,7 @@
 - 🏅 Hoje sou **Microsoft MVP** e **Microsoft Certified Trainer (MCT)**
 - ☁️ Especialista em **Microsoft Azure**, **Microsoft 365** e cenários híbridos
 - 🔐 Foco em **Identity, Zero Trust, Defender, Intune, Entra ID e infraestrutura segura**
-- ⚙️ Estudo **DevOps, CI/CD e Infrastructure as Code** em laboratórios e projetos de aprendizado, sem posicionar isso como atuação profissional principal
+- ⚙️ Em estudo: **DevOps, CI/CD e Infrastructure as Code**, aplicados em laboratórios e projetos pessoais
 - 📚 Também compartilho conhecimento por meio de treinamentos, laboratório prático, conteúdo técnico e comunidade
 
 ---
