@@ -1,11 +1,11 @@
 <h1 align="center">Olá, eu sou o Leandro Castor 👋</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3200&pause=900&color=0078D4&center=true&vCenter=true&width=760&lines=Microsoft+MVP+%7C+Cloud+%26+Security+Specialist;Microsoft+Certified+Trainer+(MCT);Azure+%7C+Microsoft+365+%7C+Identity+%7C+Security;Arquitetura%2C+Governan%C3%A7a+e+Moderniza%C3%A7%C3%A3o" alt="Animação destacando Leandro Castor como Microsoft MVP, MCT e especialista em Cloud e Security" title="Microsoft MVP, MCT e Cloud & Security Specialist"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3200&pause=900&color=0078D4&center=true&vCenter=true&width=760&lines=Microsoft+MVP+Azure+Compute+Infrastructure+%7C+Cloud+%26+Security+Specialist;Microsoft+Certified+Trainer+(MCT);Azure+%7C+Microsoft+365+%7C+Identity+%7C+Security;Arquitetura%2C+Governan%C3%A7a+e+Moderniza%C3%A7%C3%A3o" alt="Animação destacando Leandro Castor como Microsoft MVP em Azure Compute Infrastructure, MCT e especialista em Cloud e Security" title="Microsoft MVP Azure Compute Infrastructure, MCT e Cloud & Security Specialist"/>
 </p>
 
 <p align="center">
-  <b>Microsoft MVP | Microsoft Certified Trainer (MCT) | Cloud & Security Specialist</b><br/>
+  <b>Microsoft MVP Azure Compute Infrastructure | Microsoft Certified Trainer (MCT) | Cloud & Security Specialist</b><br/>
   Especialista em Azure, Microsoft 365, Identity, Security, Governance e Infrastructure
 </p>
 
@@ -46,7 +46,7 @@
 ## 🚀 Sobre mim
 
 - 🎯 Atuo com **Cloud Pre-Sales, arquitetura, segurança, governança e modernização**
-- 🏅 Hoje sou **Microsoft MVP** e **Microsoft Certified Trainer (MCT)**
+- 🏅 Hoje sou **Microsoft MVP Azure Compute Infrastructure** e **Microsoft Certified Trainer (MCT)**
 - ☁️ Especialista em **Microsoft Azure**, **Microsoft 365** e cenários híbridos
 - 🔐 Foco em **Identity, Zero Trust, Defender, Intune, Entra ID e infraestrutura segura**
 - ⚙️ Em estudo: **DevOps, CI/CD e Infrastructure as Code**, aplicados em laboratórios e projetos pessoais
@@ -72,7 +72,7 @@
 <table align="center">
   <tr>
     <td valign="middle">
-      <img src="assets/mvp-badge.png" height="92" alt="Badge Microsoft Most Valuable Professional" title="Microsoft MVP"/>
+      <img src="assets/mvp-badge.png" height="92" alt="Badge Microsoft MVP Azure Compute Infrastructure" title="Microsoft MVP Azure Compute Infrastructure"/>
     </td>
     <td valign="middle">
       <img src="assets/mct-badge.png" height="112" alt="Badge Microsoft Certified Trainer" title="Microsoft Certified Trainer"/>
@@ -96,7 +96,7 @@
   </tr>
   <tr>
     <td><strong>Hoje</strong></td>
-    <td>Microsoft MVP + MCT</td>
+    <td>Microsoft MVP Azure Compute Infrastructure + MCT</td>
     <td>Comunidade, treinamentos oficiais e conteúdo técnico aplicado.</td>
   </tr>
   <tr>
@@ -132,7 +132,7 @@
 | Microsoft 365 | Atuação profissional | Administração, proteção, colaboração e produtividade segura |
 | Infrastructure | Atuação profissional | Ambientes híbridos, operação segura e governança |
 | DevOps, CI/CD & IaC | Estudo e laboratórios | PowerShell, Bicep, Terraform, Azure DevOps e GitHub Actions |
-| Comunidade & Treinamento | Atuação pública | MCT, MVP, talks, labs e capacitação prática |
+| Comunidade & Treinamento | Atuação pública | MCT, MVP Azure Compute Infrastructure, talks, labs e capacitação prática |
 
 <p align="center">
   <img src="assets/tech-stack-glass.svg" alt="Card com efeito glassmorphism mostrando áreas profissionais e estudos em Microsoft Cloud" title="Foco profissional e estudos"/>
@@ -209,8 +209,8 @@
 <table align="center">
   <tr>
     <td valign="middle">
-      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank" title="Ver badge Microsoft MVP no Credly">
-        <img src="assets/mvp-badge.png" height="88" alt="Badge Microsoft Most Valuable Professional" title="Microsoft MVP"/>
+      <a href="https://www.credly.com/users/leandro-irineu-castor/" target="_blank" title="Ver badge Microsoft MVP Azure Compute Infrastructure no Credly">
+        <img src="assets/mvp-badge.png" height="88" alt="Badge Microsoft MVP Azure Compute Infrastructure" title="Microsoft MVP Azure Compute Infrastructure"/>
       </a>
     </td>
     <td valign="middle">
