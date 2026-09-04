@@ -1,7 +1,7 @@
 <h1 align="center">Olá, eu sou o Leandro Castor 👋</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3200&pause=900&color=0078D4&center=true&vCenter=true&width=760&lines=Microsoft+MVP+%7C+Cloud+%26+Security+Specialist;Microsoft+Certified+Trainer+(MCT);Azure+%7C+Microsoft+365+%7C+Identity+%7C+Security;Arquitetura%2C+Governan%C3%A7a%2C+Moderniza%C3%A7%C3%A3o+e+Automa%C3%A7%C3%A3o" alt="Animação destacando Leandro Castor como Microsoft MVP, MCT e especialista em Cloud e Security" title="Microsoft MVP, MCT e Cloud & Security Specialist"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3200&pause=900&color=0078D4&center=true&vCenter=true&width=760&lines=Microsoft+MVP+%7C+Cloud+%26+Security+Specialist;Microsoft+Certified+Trainer+(MCT);Azure+%7C+Microsoft+365+%7C+Identity+%7C+Security;Arquitetura%2C+Governan%C3%A7a+e+Moderniza%C3%A7%C3%A3o" alt="Animação destacando Leandro Castor como Microsoft MVP, MCT e especialista em Cloud e Security" title="Microsoft MVP, MCT e Cloud & Security Specialist"/>
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/modern-profile-card.svg" alt="Card visual com foco em arquitetura, segurança, automação e comunidade Microsoft" title="Cloud, Security, Automation e Comunidade"/>
+  <img src="assets/modern-profile-card.svg" alt="Card visual com foco em arquitetura, segurança, governança e comunidade Microsoft" title="Cloud, Security, Governance e Comunidade"/>
 </p>
 
 <p align="center">
@@ -49,7 +49,7 @@
 - 🏅 Hoje sou **Microsoft MVP** e **Microsoft Certified Trainer (MCT)**
 - ☁️ Especialista em **Microsoft Azure**, **Microsoft 365** e cenários híbridos
 - 🔐 Foco em **Identity, Zero Trust, Defender, Intune, Entra ID e infraestrutura segura**
-- ⚙️ Trabalho com **automação, DevOps, CI/CD e Infrastructure as Code** usando PowerShell, Bicep, Terraform e Azure DevOps
+- ⚙️ Estudo **DevOps, CI/CD e Infrastructure as Code** em laboratórios e projetos de aprendizado, sem posicionar isso como atuação profissional principal
 - 📚 Também compartilho conhecimento por meio de treinamentos, laboratório prático, conteúdo técnico e comunidade
 
 ---
@@ -81,7 +81,7 @@
 </table>
 
 <p align="center">
-  <b>Áreas de atuação:</b> Azure • Microsoft 365 • Identity • Security • Governance • Automation
+  <b>Áreas de atuação:</b> Azure • Microsoft 365 • Identity • Security • Governance • Infrastructure
 </p>
 
 ---
@@ -111,25 +111,31 @@
   </tr>
   <tr>
     <td><strong>Base</strong></td>
-    <td>Infraestrutura, DevOps e automação</td>
-    <td>Construção de ambientes híbridos, IaC, pipelines e operações confiáveis.</td>
+    <td>Infraestrutura e operações</td>
+    <td>Construção e sustentação de ambientes híbridos com foco em confiabilidade e segurança.</td>
+  </tr>
+  <tr>
+    <td><strong>Estudo</strong></td>
+    <td>DevOps, CI/CD e Infrastructure as Code</td>
+    <td>Aprendizado contínuo por meio de laboratórios, repositórios públicos e práticas guiadas.</td>
   </tr>
 </table>
 
 ---
 
-## 📈 Expertise por domínio
+## 📈 Foco profissional e estudos
 
-| Domínio | Proficiência | Foco |
-|---|:---:|---|
-| Azure Architecture | █████████░ 90% | Landing zones, modernização, governança e Well-Architected |
-| Security & Identity | █████████░ 95% | Zero Trust, Entra ID, Defender, Sentinel e compliance |
-| Microsoft 365 | ████████░░ 85% | Administração, proteção, colaboração e produtividade segura |
-| DevOps & IaC | ████████░░ 85% | PowerShell, Bicep, Terraform, Azure DevOps e GitHub Actions |
-| Comunidade & Treinamento | █████████░ 95% | MCT, MVP, talks, labs e capacitação prática |
+| Área | Posicionamento | Foco |
+|---|---|---|
+| Azure Architecture | Atuação profissional | Landing zones, modernização, governança e Well-Architected |
+| Security & Identity | Atuação profissional | Zero Trust, Entra ID, Defender, Sentinel e compliance |
+| Microsoft 365 | Atuação profissional | Administração, proteção, colaboração e produtividade segura |
+| Infrastructure | Atuação profissional | Ambientes híbridos, operação segura e governança |
+| DevOps, CI/CD & IaC | Estudo e laboratórios | PowerShell, Bicep, Terraform, Azure DevOps e GitHub Actions |
+| Comunidade & Treinamento | Atuação pública | MCT, MVP, talks, labs e capacitação prática |
 
 <p align="center">
-  <img src="assets/tech-stack-glass.svg" alt="Card com efeito glassmorphism mostrando proficiência e anos de experiência em Azure, Security, Microsoft 365 e DevOps" title="Tech Stack (glassmorphism)"/>
+  <img src="assets/tech-stack-glass.svg" alt="Card com efeito glassmorphism mostrando áreas profissionais e estudos em Microsoft Cloud" title="Foco profissional e estudos"/>
 </p>
 
 ---
@@ -160,7 +166,7 @@
 <!-- O workflow .github/workflows/update-dynamic-profile.yml pode atualizar esta seção automaticamente a partir de um feed RSS. -->
 <!-- BLOG-POST-LIST:START -->
 - [Arquitetura, segurança e Microsoft Cloud na CastorTech](https://castortech.com.br) — conteúdos técnicos, labs e reflexões sobre Cloud, Security e Modern Work.
-- [Projetos e automações públicas no GitHub](https://github.com/leandrocastor?tab=repositories) — exemplos práticos em Azure, DevOps e Microsoft 365.
+- [Projetos públicos no GitHub](https://github.com/leandrocastor?tab=repositories) — exemplos práticos em Azure, Microsoft 365 e estudos técnicos.
 - [Conteúdos em vídeo no YouTube](https://www.youtube.com/@leandrocastor) — tutoriais, dicas e demonstrações técnicas.
 <!-- BLOG-POST-LIST:END -->
 
@@ -255,7 +261,7 @@
 
 ---
 
-## 🛠️ Stack principal
+## 🛠️ Tecnologias de atuação e estudo
 
 **☁️ Cloud**
 <p>
@@ -273,7 +279,7 @@
   <img src="https://img.shields.io/badge/Azure%20Firewall-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure Firewall" title="Azure Firewall"/>
 </p>
 
-**⚙️ DevOps, IaC & Automation**
+**⚙️ Estudos em DevOps, IaC & Automation**
 <p>
   <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell" title="PowerShell"/>
   <img src="https://img.shields.io/badge/Bicep-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Bicep" title="Bicep"/>
