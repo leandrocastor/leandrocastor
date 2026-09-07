@@ -297,9 +297,9 @@
 <!-- STATUS-METRICS:START -->
 | Métrica | Valor | Tendência |
 |---|:---:|:---:|
-| Last commit | 01/09/2026 | — |
+| Last commit | 04/09/2026 | — |
 | Contribuições (mês atual) | 0 | — |
-| Streak atual | 4 dia(s) | — |
+| Streak atual | 0 dia(s) | — |
 | Repositórios ativos | 2 | — |
 <!-- STATUS-METRICS:END -->
 
